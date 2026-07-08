@@ -19,10 +19,13 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import scipy.sparse
+from dotenv import load_dotenv
 
 import warnings
 warnings.simplefilter("ignore", UserWarning)
 warnings.filterwarnings("ignore")
+
+load_dotenv()
 
 CONFIG = {
     "data_path": "notebooks/IMDB.csv",
@@ -34,9 +37,9 @@ CONFIG = {
 }
 
 
-dagshub_token = os.getenv("DAGSHUB_USER_TOKEN") 
+dagshub_token = os.getenv("DAGSHUB_USER_TOKEN")
 if not dagshub_token:
-    raise EnvironmentError("Set DAGSHUB_USER_TOKEN or DAGSHUB_TOKEN before running this script.")
+    raise EnvironmentError("Set DAGSHUB_USER_TOKEN before running this script.")
 
 os.environ["DAGSHUB_USER_TOKEN"] = dagshub_token
 mlflow.set_tracking_uri(CONFIG["mlflow_tracking_uri"])
