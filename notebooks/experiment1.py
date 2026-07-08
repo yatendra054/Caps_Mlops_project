@@ -43,6 +43,7 @@ if not dagshub_token:
 
 os.environ["DAGSHUB_USER_TOKEN"] = dagshub_token
 mlflow.set_tracking_uri(CONFIG["mlflow_tracking_uri"])
+dagshub.init(repo_owner=CONFIG["dagshub_repo_owner"], repo_name=CONFIG["dagshub_repo_name"], mlflow=True)
 mlflow.set_experiment(CONFIG["experiment_name"])
 
 def lemmatization(text):
