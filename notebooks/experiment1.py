@@ -27,7 +27,7 @@ warnings.filterwarnings("ignore")
 CONFIG = {
     "data_path": "notebooks/IMDB.csv",
     "test_size": 0.2,
-    "mlflow_tracking_uri": "https://dagshub.com/yatendra054/Caps_Mlops_project",
+    "mlflow_tracking_uri": "https://dagshub.com/yatendra054/Caps_Mlops_project.mlflow",
     "dagshub_repo_owner": "yatendra054",
     "dagshub_repo_name": "Caps_Mlops_project",
     "experiment_name": "Bow_vs_TfIdf"
