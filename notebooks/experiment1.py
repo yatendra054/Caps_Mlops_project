@@ -34,6 +34,11 @@ CONFIG = {
 }
 
 
+dagshub_token = os.getenv("DAGSHUB_USER_TOKEN") 
+if not dagshub_token:
+    raise EnvironmentError("Set DAGSHUB_USER_TOKEN or DAGSHUB_TOKEN before running this script.")
+
+os.environ["DAGSHUB_USER_TOKEN"] = dagshub_token
 mlflow.set_tracking_uri(CONFIG["mlflow_tracking_uri"])
 dagshub.init(repo_owner=CONFIG["dagshub_repo_owner"], repo_name=CONFIG["dagshub_repo_name"], mlflow=True)
 mlflow.set_experiment(CONFIG["experiment_name"])
