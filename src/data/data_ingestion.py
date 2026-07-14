@@ -74,7 +74,7 @@ def main():
         test_size = params['data_ingestion']['test_size']
         bucket_name = os.getenv('AWS_S3_BUCKET')
         aws_access_key = os.getenv('AWS_ACCESS_KEY_ID')
-        aws_secret_key = os.getenv('AWS_SECRET_KEY_ID')
+        aws_secret_key = os.getenv('AWS_SECRET_KEY')
 
         
         # df = load_data(data_url='https://raw.githubusercontent.com/vikashishere/Datasets/refs/heads/main/data.csv')
